@@ -24,12 +24,12 @@ open http://localhost:3000
 
 | Service | Image | Port | Purpose |
 |---------|-------|------|---------|
-| api | opensoar | 8000 | FastAPI backend |
-| worker | opensoar | — | Celery playbook executor |
-| ui | opensoar-ui | 3000 | React frontend |
-| postgres | postgres:16 | 5432 | Database |
-| redis | redis:7 | 6379 | Broker + cache |
-| migrate | opensoar | — | Database migrations (runs once) |
+| api | ghcr.io/opensoar-hq/opensoar-api | 8000 | FastAPI backend |
+| worker | ghcr.io/opensoar-hq/opensoar-worker | — | Celery playbook executor |
+| ui | ghcr.io/opensoar-hq/opensoar-ui | 3000 | React frontend |
+| postgres | postgres:16-alpine | 5432 | Database |
+| redis | redis:7-alpine | 6379 | Broker + cache |
+| migrate | ghcr.io/opensoar-hq/opensoar-migrate | — | Database migrations (runs once) |
 
 ## Development
 
