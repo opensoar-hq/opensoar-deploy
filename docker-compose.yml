@@ -22,7 +22,7 @@ services:
       retries: 5
 
   migrate:
-    image: ghcr.io/opensoar-hq/opensoar-migrate:latest
+    image: ghcr.io/opensoar-hq/opensoar-core-migrate:latest
     environment:
       DATABASE_URL: postgresql+asyncpg://opensoar:${POSTGRES_PASSWORD:-opensoar}@postgres:5432/opensoar
     depends_on:
@@ -30,7 +30,7 @@ services:
         condition: service_healthy
 
   api:
-    image: ghcr.io/opensoar-hq/opensoar-api:latest
+    image: ghcr.io/opensoar-hq/opensoar-core-api:latest
     environment:
       DATABASE_URL: postgresql+asyncpg://opensoar:${POSTGRES_PASSWORD:-opensoar}@postgres:5432/opensoar
       REDIS_URL: redis://redis:6379/0
@@ -46,7 +46,7 @@ services:
         condition: service_healthy
 
   worker:
-    image: ghcr.io/opensoar-hq/opensoar-worker:latest
+    image: ghcr.io/opensoar-hq/opensoar-core-worker:latest
     environment:
       DATABASE_URL: postgresql+asyncpg://opensoar:${POSTGRES_PASSWORD:-opensoar}@postgres:5432/opensoar
       REDIS_URL: redis://redis:6379/0

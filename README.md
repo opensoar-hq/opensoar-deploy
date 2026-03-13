@@ -1,6 +1,6 @@
 # OpenSOAR Deploy
 
-Deployment configurations for the [OpenSOAR](https://github.com/opensoar-hq/opensoar) SOAR platform.
+Deployment configurations for the [OpenSOAR](https://github.com/opensoar-hq/opensoar-core) SOAR platform.
 
 ## Quick Start
 
@@ -24,19 +24,19 @@ open http://localhost:3000
 
 | Service | Image | Port | Purpose |
 |---------|-------|------|---------|
-| api | ghcr.io/opensoar-hq/opensoar-api | 8000 | FastAPI backend |
-| worker | ghcr.io/opensoar-hq/opensoar-worker | — | Celery playbook executor |
+| api | ghcr.io/opensoar-hq/opensoar-core-api | 8000 | FastAPI backend |
+| worker | ghcr.io/opensoar-hq/opensoar-core-worker | — | Celery playbook executor |
 | ui | ghcr.io/opensoar-hq/opensoar-ui | 3000 | React frontend |
 | postgres | postgres:16-alpine | 5432 | Database |
 | redis | redis:7-alpine | 6379 | Broker + cache |
-| migrate | ghcr.io/opensoar-hq/opensoar-migrate | — | Database migrations (runs once) |
+| migrate | ghcr.io/opensoar-hq/opensoar-core-migrate | — | Database migrations (runs once) |
 
 ## Development
 
 For local development with source mounting:
 
 ```bash
-# Assumes repos are siblings: ../opensoar, ../opensoar-ui
+# Assumes repos are siblings: ../opensoar-core, ../opensoar-ui
 docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
 ```
 
@@ -68,7 +68,7 @@ docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
 
 ## Part of OpenSOAR
 
-- [opensoar](https://github.com/opensoar-hq/opensoar) — Core platform
+- [opensoar-core](https://github.com/opensoar-hq/opensoar-core) — Core platform
 - [opensoar-ui](https://github.com/opensoar-hq/opensoar-ui) — Frontend
 - [opensoar-sdk](https://github.com/opensoar-hq/opensoar-sdk) — Python SDK
 - [opensoar-integrations](https://github.com/opensoar-hq/opensoar-integrations) — Community integrations
