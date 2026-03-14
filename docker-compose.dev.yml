@@ -18,9 +18,10 @@ services:
 
   ui:
     build:
-      context: ../opensoar-ui
+      context: ../opensoar-core
+      target: ui
     command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
     volumes:
-      - ../opensoar-ui/src:/app/src
+      - ../opensoar-core/ui/src:/app/src
     ports:
       - "3000:5173"

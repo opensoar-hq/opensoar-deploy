@@ -26,7 +26,7 @@ open http://localhost:3000
 |---------|-------|------|---------|
 | api | ghcr.io/opensoar-hq/opensoar-core-api | 8000 | FastAPI backend |
 | worker | ghcr.io/opensoar-hq/opensoar-core-worker | — | Celery playbook executor |
-| ui | ghcr.io/opensoar-hq/opensoar-ui | 3000 | React frontend |
+| ui | ghcr.io/opensoar-hq/opensoar-core-ui | 3000 | React frontend |
 | postgres | postgres:16-alpine | 5432 | Database |
 | redis | redis:7-alpine | 6379 | Broker + cache |
 | migrate | ghcr.io/opensoar-hq/opensoar-core-migrate | — | Database migrations (runs once) |
@@ -36,7 +36,7 @@ open http://localhost:3000
 For local development with source mounting:
 
 ```bash
-# Assumes repos are siblings: ../opensoar-core, ../opensoar-ui
+# Assumes opensoar-core repo is a sibling: ../opensoar-core
 docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
 ```
 
@@ -68,7 +68,6 @@ docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
 
 ## Part of OpenSOAR
 
-- [opensoar-core](https://github.com/opensoar-hq/opensoar-core) — Core platform
-- [opensoar-ui](https://github.com/opensoar-hq/opensoar-ui) — Frontend
+- [opensoar-core](https://github.com/opensoar-hq/opensoar-core) — Core platform (API, UI, playbook engine)
 - [opensoar-sdk](https://github.com/opensoar-hq/opensoar-sdk) — Python SDK
 - [opensoar-integrations](https://github.com/opensoar-hq/opensoar-integrations) — Community integrations

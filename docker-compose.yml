@@ -59,7 +59,7 @@ services:
         condition: service_healthy
 
   ui:
-    image: ghcr.io/opensoar-hq/opensoar-ui:latest
+    image: ghcr.io/opensoar-hq/opensoar-core-ui:latest
     ports:
       - "${UI_PORT:-3000}:80"
     depends_on:
