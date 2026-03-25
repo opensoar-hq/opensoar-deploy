@@ -26,6 +26,7 @@ services:
     environment:
       DATABASE_URL: postgresql+asyncpg://opensoar:${POSTGRES_PASSWORD:-opensoar}@postgres:5432/opensoar
       JWT_SECRET: ${JWT_SECRET:-changeme}
+      API_KEY_SECRET: ${API_KEY_SECRET:-changeme}
     depends_on:
       postgres:
         condition: service_healthy
