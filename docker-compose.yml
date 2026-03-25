@@ -38,6 +38,8 @@ services:
       REDIS_URL: redis://redis:6379/0
       CELERY_BROKER_URL: redis://redis:6379/1
       JWT_SECRET: ${JWT_SECRET}
+      API_KEY_SECRET: ${API_KEY_SECRET:-changeme}
+      API_KEY_SECRET: ${API_KEY_SECRET:-changeme}
       PLAYBOOK_DIRS: /app/playbooks
     ports:
       - "${API_PORT:-8000}:8000"
