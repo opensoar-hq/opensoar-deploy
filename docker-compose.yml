@@ -25,6 +25,7 @@ services:
     image: ghcr.io/opensoar-hq/opensoar-core-migrate:latest
     environment:
       DATABASE_URL: postgresql+asyncpg://opensoar:${POSTGRES_PASSWORD:-opensoar}@postgres:5432/opensoar
+      JWT_SECRET: ${JWT_SECRET:-changeme}
     depends_on:
       postgres:
         condition: service_healthy
