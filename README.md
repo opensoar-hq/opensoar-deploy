@@ -2,6 +2,8 @@
 
 Deployment configurations for the [OpenSOAR](https://github.com/opensoar-hq/opensoar-core) SOAR platform.
 
+**OpenSOAR is a PwnKit Labs product.**
+
 ## Quick Start
 
 ```bash
